@@ -1,0 +1,33 @@
+version: '2'
+
+volumes:
+  ncabc1-db-data:
+  ncxyz1-db-data:
+
+services:
+
+  ncabc1-db:
+    image: postgres
+    container_name: ncabc1-db
+    ports:
+      - 5432
+    volumes:
+      - ncabc1-db-data:/data
+    environment:
+      - PGDATA=/data
+      - POSTGRES_DB=ncabc1
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=pass123
+
+  ncxyz1-db:
+    image: postgres
+    container_name: ncxyz1-db
+    ports:
+      - 5432
+    volumes:
+      - ncxyz1-db-data:/data
+    environment:
+      - PGDATA=/data
+      - POSTGRES_DB=ncxyz1
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=pass123

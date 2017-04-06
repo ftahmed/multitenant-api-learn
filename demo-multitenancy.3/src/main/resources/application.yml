@@ -1,0 +1,18 @@
+app.multitenancy:
+  tenants:
+    - name: tenant_1
+      url: jdbc:postgresql://localhost:32768/ncabc1
+      username: ncuser
+      password: ncuser123
+#      driver-class-name: org.postgresql.Driver
+    - name: tenant_2
+      url: jdbc:postgresql://localhost:32769/ncxyz1
+      username: ncuser
+      password: ncuser123
+#      driver-class-name: org.postgresql.Driver
+    - name: tenant_3
+      url: jdbc:postgresql://localhost:32769/nczzz1
+      username: ncuser
+      password: ncuser123
+#      driver-class-name: org.postgresql.Driver
+  defaultTenant: tenant_1
